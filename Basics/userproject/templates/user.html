@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>User Page</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+
+    {% block content %}
+    <div class="container">
+       <h1 class="text-primary">User Registration Form</h1>
+    <form action="" method="post" class="mt-4" class="form-group">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Register" class="btn btn-primary">
+    </form>
+    </div>
+    {% endblock %}
+
+     {% comment %}  <h1>User Registration Form</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Register">
+    </form> {% endcomment %}
+
+</body>
+</html>

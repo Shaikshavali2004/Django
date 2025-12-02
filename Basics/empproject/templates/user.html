@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>User Form</title>
+    </head>
+    <body>
+        <h1>User Details Form</h1>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{userform.as_p}}
+            <input type="submit" value="Add New User">
+        </form>
+    </body>
+</html>

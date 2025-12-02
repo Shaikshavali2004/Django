@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>Product Details</title>      
+</head>
+<body>
+    <h2>Product Details</h2>
+    {% if prod_list %}
+        <table border="1">
+        <thead>
+            <tr>
+              <th>Product Name</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Manufactured Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for prod in prod_list %}
+               <tr>
+                   <td>{{ prod.pname }}</td>
+                   <td>{{ prod.price }}</td>
+                   <td>{{ prod.qty }}</td>
+                   <td>{{ prod.mfg }}</td>
+               </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>No Products Available</p>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>Employee Page</title>
+    </head>
+<body>
+    <h2>Employee Page</h2>
+    <form action="{% url 'saveemp' %}" method='post'>
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type='submit' value='Register'/>
+    </form>
+</body>
+</html>

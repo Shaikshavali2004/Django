@@ -1,0 +1,25 @@
+py -m django --version
+
+py -m venv myenv
+
+myenv\Scripts\activate
+
+pip install django
+
+django-admin startproject firstproject
+
+cd firstproject
+
+py manage.py startapp userapp
+
+py manage.py runserver  // default port number is 127.0.0.1:8000
+
+How to change default port number?
+Ans:- py manage.py runserver 8080
+ 
+py manage.py migrate
+
+py manage.py createsuperuser
+
+py manage.py runserver 8080
+
