@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>Update Page</title>
+    </head>
+<body>
+    <h2>Update Products</h2>
+   <form action="/update/{{product.id}}" method='POST'>
+        {% csrf_token %}
+        <div>
+            <label>Product_ID:</label>
+            <input type='number' id='id_pid' name='pid' value="{{product.pid}}"/>
+        </div>
+        <br>
+        <div>
+            <label>Product_Name:</label>
+            <input type='text' id='id_pname' name='pname' value="{{product.pname}}"/>
+        </div>
+        <br>
+        <div>
+            <label>Price:</label>
+            <input type='number' id='id_price' name='price' value="{{product.price}}"/>
+        </div>
+        <br>
+        <div>
+            <label>Quantity:</label>
+            <input type='number' id='id_qty' name='qty' value="{{product.qty}}"/>
+        </div>
+        <br>
+        <div>
+            <input type="submit" value="Update Product"/>
+        </div>
+    </form>
+</body>
+</html>

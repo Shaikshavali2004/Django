@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>User Registration</title>
+    </head>
+<body>
+    <h2>User Page</h2>
+    <form action="{% url 'saveuser' %}" method='post'>
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type='submit' value='Register'/>
+    </form>
+</body>
+</html>

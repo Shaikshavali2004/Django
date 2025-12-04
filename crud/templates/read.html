@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Read Page</title>
+    </head>
+<body>
+    <h2><u>Display Employees in Table Format</u></h2>
+    <table border="2">
+        <thead>
+            <th>E_ID</th>
+            <th>E_Name</th>
+            <th>E_Email</th>
+            <th>E_Salary</th>
+            <th>E_Location</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            {% for emp in employees %}
+            <tr>
+                <td>{{emp.eid}}</td>
+                <td>{{emp.ename}}</td>
+                <td>{{emp.email}}</td>
+                <td>{{emp.esal}}</td>
+                <td>{{emp.eloc}}</td>
+                <td>
+                    <a href="/update/{{emp.id}}">Update</a>
+                    <a href="/delete/{{emp.id}}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

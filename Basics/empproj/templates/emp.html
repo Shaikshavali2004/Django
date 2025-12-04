@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>Employee Registration</title>
+    </head>
+<body>
+    {% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-success mb-4 text-center">Employee Registration</h2>
+
+    <form action="{% url 'saveemp' %}" method="post" class="border p-4 rounded shadow-sm w-50 mx-auto">
+        {% csrf_token %}
+        
+        {% for field in form %}
+        <div class="mb-3">
+            <label class="form-label">{{ field.label }}</label>
+            {{ field }}
+            {% if field.errors %}
+                <div class="text-danger small">{{ field.errors }}</div>
+            {% endif %}
+        </div>
+        {% endfor %}
+        
+        <button class="btn btn-primary" type="submit">Register</button>
+    </form>
+</div>
+{% endblock %}
+
+
+
+
+    {% comment %} {% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-success">Employee Page</h2>
+    <form action="{% url 'saveemp' %}" method='post'>
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type='submit' value='Register'/>
+    </form>
+</div>
+{% endblock %} {% endcomment %}
+
+    {% comment %} <h2>Employee Page</h2>
+    <form action="{% url 'saveemp' %}" method='post'>
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type='submit' value='Register'/>
+    </form> {% endcomment %}
+</body>
+</html>

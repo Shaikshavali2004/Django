@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Create Page</title>
+    </head>
+<body>
+    <h2>Create New Employee</h2>
+    <form action="" method='POST'>
+        {% csrf_token %}
+        <div>
+            <label>Employee ID:</label>
+            {{form.eid}}
+        </div>
+        <br>
+        <div>
+            <label>Employee Name:</label>
+            {{form.ename}}
+        </div>
+        <br>
+        <div>
+            <label>Employee Email:</label>
+            {{form.email}}
+        </div>
+        <br>
+        <div>
+            <label>Employee Salary:</label>
+            {{form.esal}}
+        </div>
+        <br>
+        <div>
+            <label>Employee Location:</label>
+            {{form.eloc}}
+        </div>
+        <div>
+            <input type="submit" value="Create"/>
+        </div>
+    </form>
+</body>
+</html>
